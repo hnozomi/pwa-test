@@ -1,0 +1,91 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.main-header {
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5em;
+}
+
+.main-header-text {
+}
+
+.main-header-add {
+  margin: 0 0 0 auto;
+}
+
+.subscription-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-form-radio {
+  margin: 0 0.7em 0 0;
+}
+
+.subscription-area {
+  margin-top: 1em !important;
+  /* margin-top: 1em; */
+  width: 100%;
+}
+
+.subscription-area:first-of-type {
+  margin-top: 0.5em !important;
+}
+
+.add-form {
+  display: flex;
+  flex-direction: column;
+  /* margin: 0 3em !important; */
+}
+
+.add-form-wrapper {
+  /* margin: 0 3em !important; */
+}
+
+.add-form-input {
+  margin-bottom: 1em;
+}
+
+.add-form-label {
+  /* margin: 0 0 0 auto; */
+  /* width: 50%; */
+}
+
+.add-form-button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.subscription-detail {
+  margin: 0 1em !important;
+  border: none;
+}
+
+.detail {
+  border: none !important;
+}
+
+.sucscription-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  justify-content: space-between;
+}
+
+.sucscription-title {
+  order: 2;
+}
+
+.sucscription-cost {
+  order: 1;
+}
+
+.subscription-total {
+  margin: 1em 0 !important;
+}
