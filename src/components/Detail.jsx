@@ -1,5 +1,5 @@
 import React from "react";
-import { Divider, Header, Icon, Table, Button } from "semantic-ui-react";
+import { Divider, Header, Table, Button } from "semantic-ui-react";
 
 export const Detail = (props) => {
   const { arrayDetail, onBackHome, onDeleteSubscription } = props;

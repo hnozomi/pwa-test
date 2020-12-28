@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-import { Button, Icon, Container, Divider, Segment } from "semantic-ui-react";
+import { Button, Icon, Container, Segment } from "semantic-ui-react";
 
 export const Home = (props) => {
   const { onClickSubscription, arraySubscription, arrayTotalCost } = props;

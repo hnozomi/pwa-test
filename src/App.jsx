@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./reset.css";
 import "./styles.css";
 import { Home } from "./components/Home";
@@ -13,11 +13,11 @@ export const App = () => {
   const [arraySubscription, setArraySubscription] = useState([]);
   const [arrayDetail, setArrayDetail] = useState();
   const [arrayTotalCost, setTotalCost] = useState(0);
-  const [user, setChangeUser] = useState("");
+  // const [user, setChangeUser] = useState("");
   const [table, setTable] = useState(false);
   const [loading, setloading] = useState(false);
   // const [arraySubscriptions, setArraySubscriptions] = useState([]);
-  const arraySubscriptions = [];
+  // const arraySubscriptions = [];
 
   const axios = require("axios").default;
 
@@ -100,9 +100,9 @@ export const App = () => {
     onBackHome();
   };
 
-  const onChangeUser = (e) => {
-    setChangeUser(e.target.value);
-  };
+  // const onChangeUser = (e) => {
+  //   setChangeUser(e.target.value);
+  // };
 
   // user: true ⇨ 表示するテーブルIDセット完了。false ⇨ セット未完了
   // loading: true ⇨ データ取得完了。false ⇨ データ取得未完了
@@ -128,7 +128,7 @@ export const App = () => {
               <Input
                 className="add-form-input"
                 placeholder="サブスク名"
-                onChange={onChangeUser}
+                // onChange={onChangeUser}
               />
             </Form.Field>
             <Button onClick={onClickGetSubscription} type="submit">
