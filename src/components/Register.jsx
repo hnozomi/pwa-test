@@ -4,7 +4,6 @@ import {
   Container,
   Divider,
   Header,
-  Icon,
   Form,
   Button,
   Radio
