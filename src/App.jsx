@@ -32,6 +32,7 @@ export const App = () => {
     };
 
     axios.get(URL, { params: param }).then((response) => {
+      console.log(response.data[0])
       setArraySubscription(response.data[0]);
       setTotalCost(response.data[1]);
       setloading(false);
@@ -46,10 +47,10 @@ export const App = () => {
   };
 
   const onBackHome = () => {
+    console.log(addsubscription, subscription, arrayDetail);
     setSubscription(true);
     setAddSubscription(false);
     setDetail(false);
-    // console.log(arraySubscription);
   };
 
   const onDisplayForm = () => {
@@ -116,7 +117,8 @@ export const App = () => {
           サブスク管理アプリ
         </header>
         <button onClick={onDisplayForm} className="main-header-add">
-          <img alt="追加アイコン" src="/AddIcon.png" />
+          <img className="main-header-icon" alt="追加アイコン" src="/AddSubscription.svg" />
+          {/* <img alt="追加アイコン" src="/AddIcon.png" /> */}
           {/* <img alt="追加アイコン" src="AddSubscription.svg" /> */}
         </button>
       </div>
@@ -161,6 +163,7 @@ export const App = () => {
       {detail && (
         <Detail
           arraySubscription={arraySubscription}
+          onBackHome={onBackHome}
           arrayDetail={arrayDetail}
           onDeleteSubscription={onDeleteSubscription}
         ></Detail>

@@ -36,17 +36,44 @@ export const Detail = (props) => {
             <Table.Cell>登録日</Table.Cell>
             <Table.Cell>{arrayDetail[5]}</Table.Cell>
           </Table.Row>
-        </Table.Body>
+          <Table.Row>
+            <Table.Cell>メモ</Table.Cell>
+            <Table.Cell>{arrayDetail[6]}</Table.Cell>
+          </Table.Row>
+
+          {/* <Table.Row className="del-form-button-wrapper">
+
+          <Table.Cell> */}
+
+          {/* <Table.Footer className="del-form-button-wrapper"> */}
+          {/* <Table.Row className="del-form-button-wrapper"> */}
+          {/* <Table.HeaderCell className="del-form-button-wrapper"> */}
+
+          {/* <div className="del-form-button-wrapper"> */}
+          </Table.Body>
+          <Table.Footer className="del-form-button-wrapper">
+          <Table.Row>
+          <Table.HeaderCell>
+            <Button
+            floated='right'
+              onClick={() => onDeleteSubscription(arrayDetail[1])}
+              className="add-form-button"
+              >
+              削除
+            </Button>
+            <Button floated='right' onClick={onBackHome} className="del-form-button">
+              戻る
+            </Button>
+                </Table.HeaderCell>
+              </Table.Row>
+                </Table.Footer>
+          {/* </div> */}
+              {/* </Table.HeaderCell> */}
+                {/* </Table.Row> */}
+                {/* </Table.Cell>
+                </Table.Row> */}
+              {/* </Table.Footer> */}
       </Table>
-      <Button onClick={onBackHome} className="add-form-button">
-        戻る
-      </Button>
-      <Button
-        onClick={() => onDeleteSubscription(arrayDetail[1])}
-        className="add-form-button"
-      >
-        削除
-      </Button>
     </>
   );
 };

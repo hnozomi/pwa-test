@@ -29,7 +29,7 @@ export const Register = (props) => {
     <>
       <Divider horizontal>
         <Header as="h4">
-          <Icon name="bar chart" />
+          {/* <Icon name="bar chart" /> */}
           サブスク追加
         </Header>
       </Divider>
@@ -87,7 +87,8 @@ export const Register = (props) => {
             <label className="add-form-label">登録日</label>
             <Input
               className="add-form-input"
-              placeholder="登録日(yy/mm/dd)"
+              placeholder="登録日"
+              type="date"
               onChange={onChangeDate}
             />
             <label className="add-form-label">備考</label>

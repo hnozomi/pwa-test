@@ -57,9 +57,14 @@
   /* width: 50%; */
 }
 
-.add-form-button-wrapper {
-  display: flex;
+.add-form-button-wrapper, .del-form-button-wrapper {
+  display: flex!important;
   justify-content: flex-end;
+}
+
+.del-form-button-wrapper {
+  /* margin-top: 1.5em; */
+  border: none!important;
 }
 
 .subscription-detail {
@@ -88,4 +93,9 @@
 
 .subscription-total {
   margin: 1em 0 !important;
+}
+
+.main-header-icon {
+  width: 1.5em;
+  height: 1.5em;
 }

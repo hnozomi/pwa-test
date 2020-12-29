@@ -12,7 +12,6 @@ export const Home = (props) => {
           毎月{arrayTotalCost}円支払いがあります
         </Segment>
         {arraySubscription.map((subscription, index) => {
-          console.log(index);
           return (
             <Button
               // onClick={() => onClickSubscription(subscription[index])}
@@ -23,7 +22,7 @@ export const Home = (props) => {
               labelPosition="right"
               key={index}
             >
-              <Icon name="audio description" />
+              <Icon name="angle right" />
               <div className="sucscription-wrapper">
                 <p className="sucscription-title" key={index}>
                   {subscription[2]}
