@@ -10,6 +10,7 @@ import {
 } from "semantic-ui-react";
 
 export const Register = (props) => {
+  console.log(props)
   const [inputValue, setChangeValue] = useState("");
   const [inputCost, setChangeCost] = useState("");
   const [inputCycle, setChangeCycle] = useState("");

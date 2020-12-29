@@ -84,8 +84,9 @@ export const App = () => {
 
     onBackHome();
   };
-
+  
   const onDeleteSubscription = (subscriptionID) => {
+    console.log('表示')
     const URL =
       "https://f1j83dq2c6.execute-api.ap-northeast-1.amazonaws.com/default/Subscription";
 
@@ -100,10 +101,6 @@ export const App = () => {
 
     onBackHome();
   };
-
-  // const onChangeUser = (e) => {
-  //   setChangeUser(e.target.value);
-  // };
 
   // user: true ⇨ 表示するテーブルIDセット完了。false ⇨ セット未完了
   // loading: true ⇨ データ取得完了。false ⇨ データ取得未完了
@@ -162,16 +159,16 @@ export const App = () => {
       )} */}
       {detail && (
         <Detail
-          arraySubscription={arraySubscription}
-          onBackHome={onBackHome}
-          arrayDetail={arrayDetail}
-          onDeleteSubscription={onDeleteSubscription}
+        arraySubscription={arraySubscription}
+        arrayDetail={arrayDetail}
+        onBackHome={onBackHome}
+        onDeleteSubscription={onDeleteSubscription}
         ></Detail>
       )}
       {addsubscription && (
         <Register
-          onBackHome={onBackHome}
-          onAddSubscription={onAddSubscription}
+        onBackHome={onBackHome}
+        onAddSubscription={onAddSubscription}
         ></Register>
       )}
     </>

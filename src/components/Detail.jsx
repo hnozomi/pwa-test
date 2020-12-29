@@ -2,7 +2,7 @@ import React from "react";
 import { Divider, Header, Table, Button } from "semantic-ui-react";
 
 export const Detail = (props) => {
-  const { arrayDetail, onBackHome, onDeleteSubscription } = props;
+  const { onDeleteSubscription, onBackHome, arrayDetail } = props;
 
   // const onDeleteSubscription = (arrayDetail) => {
 
@@ -52,8 +52,8 @@ export const Detail = (props) => {
           {/* <div className="del-form-button-wrapper"> */}
           </Table.Body>
           <Table.Footer className="del-form-button-wrapper">
-          <Table.Row>
-          <Table.HeaderCell>
+          <Table.Row className="del-form-button-wrapper">
+          <Table.HeaderCell className="table-pointer">
             <Button
             floated='right'
               onClick={() => onDeleteSubscription(arrayDetail[1])}
@@ -61,9 +61,11 @@ export const Detail = (props) => {
               >
               削除
             </Button>
+            {/* <Button onClick={onTestConsole} className="del-form-button"> */}
             <Button floated='right' onClick={onBackHome} className="del-form-button">
-              戻る
-            </Button>
+                戻る
+              </Button>
+
                 </Table.HeaderCell>
               </Table.Row>
                 </Table.Footer>
