@@ -10,7 +10,6 @@ import {
 } from "semantic-ui-react";
 
 export const Register = (props) => {
-  console.log(props)
   const [inputValue, setChangeValue] = useState("");
   const [inputCost, setChangeCost] = useState("");
   const [inputCycle, setChangeCycle] = useState("");
@@ -29,7 +28,6 @@ export const Register = (props) => {
     <>
       <Divider horizontal>
         <Header as="h4">
-          {/* <Icon name="bar chart" /> */}
           サブスク追加
         </Header>
       </Divider>

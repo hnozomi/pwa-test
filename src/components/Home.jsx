@@ -14,10 +14,8 @@ export const Home = (props) => {
         {arraySubscription.map((subscription, index) => {
           return (
             <Button
-              // onClick={() => onClickSubscription(subscription[index])}
               onClick={() => onClickSubscription(index)}
               className="subscription-area"
-              // class="ui container"
               icon
               labelPosition="right"
               key={index}
@@ -34,14 +32,6 @@ export const Home = (props) => {
             </Button>
           );
         })}
-        {/* <Button className="subscription-area" icon labelPosition="right">
-        <Icon name="pause" />
-        2つ目のサブスク
-      </Button>
-      <Button className="subscription-area" icon labelPosition="right">
-        <Icon name="pause" />
-        3つ目のサブスク
-      </Button> */}
       </Container>
     </>
   );

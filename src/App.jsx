@@ -13,13 +13,12 @@ export const App = () => {
   const [arraySubscription, setArraySubscription] = useState([]);
   const [arrayDetail, setArrayDetail] = useState();
   const [arrayTotalCost, setTotalCost] = useState(0);
-  // const [user, setChangeUser] = useState("");
   const [table, setTable] = useState(false);
   const [loading, setloading] = useState(false);
-  // const [arraySubscriptions, setArraySubscriptions] = useState([]);
-  // const arraySubscriptions = [];
 
   const axios = require("axios").default;
+
+// DBからデータ取得
 
   const onClickGetSubscription = () => {
     setTable(true);
@@ -32,32 +31,37 @@ export const App = () => {
     };
 
     axios.get(URL, { params: param }).then((response) => {
-      console.log(response.data[0])
       setArraySubscription(response.data[0]);
       setTotalCost(response.data[1]);
       setloading(false);
     });
   };
 
+  // 詳細の表示
+
   const onClickSubscription = (id) => {
-    // console.log(arraySubscription[id - 1]);
     setArrayDetail(arraySubscription[id]);
     setSubscription(false);
     setDetail(true);
   };
 
+// ホーム画面に戻る
+
   const onBackHome = () => {
-    console.log(addsubscription, subscription, arrayDetail);
     setSubscription(true);
     setAddSubscription(false);
     setDetail(false);
   };
+
+// 登録画面の表示
 
   const onDisplayForm = () => {
     setAddSubscription(true);
     setSubscription(false);
     setDetail(false);
   };
+
+// サブスクの登録
 
   const onAddSubscription = (
     inputValue,
@@ -80,13 +84,15 @@ export const App = () => {
 
     axios.get(URL, { params: param }).then((response) => {
       setArraySubscription(response.data[0]);
+      setTotalCost(response.data[1]);
     });
 
     onBackHome();
   };
   
+// サブスクの削除
+
   const onDeleteSubscription = (subscriptionID) => {
-    console.log('表示')
     const URL =
       "https://f1j83dq2c6.execute-api.ap-northeast-1.amazonaws.com/default/Subscription";
 
@@ -97,10 +103,12 @@ export const App = () => {
 
     axios.get(URL, { params: param }).then((response) => {
       setArraySubscription(response.data[0]);
+      setTotalCost(response.data[1]);
     });
 
     onBackHome();
   };
+
 
   // user: true ⇨ 表示するテーブルIDセット完了。false ⇨ セット未完了
   // loading: true ⇨ データ取得完了。false ⇨ データ取得未完了
@@ -115,8 +123,7 @@ export const App = () => {
         </header>
         <button onClick={onDisplayForm} className="main-header-add">
           <img className="main-header-icon" alt="追加アイコン" src="/AddSubscription.svg" />
-          {/* <img alt="追加アイコン" src="/AddIcon.png" /> */}
-          {/* <img alt="追加アイコン" src="AddSubscription.svg" /> */}
+
         </button>
       </div>
       {table || (
@@ -127,7 +134,6 @@ export const App = () => {
               <Input
                 className="add-form-input"
                 placeholder="サブスク名"
-                // onChange={onChangeUser}
               />
             </Form.Field>
             <Button onClick={onClickGetSubscription} type="submit">
@@ -150,13 +156,7 @@ export const App = () => {
           arrayTotalCost={arrayTotalCost}
         ></Home>
       )}
-      {/* {subscription && (
-        <Home
-          onClickSubscription={onClickSubscription}
-          arraySubscription={arraySubscription}
-          arrayTotalCost={arrayTotalCost}
-        ></Home>
-      )} */}
+
       {detail && (
         <Detail
         arraySubscription={arraySubscription}

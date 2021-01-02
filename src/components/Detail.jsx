@@ -1,21 +1,22 @@
-import React from "react";
-import { Divider, Header, Table, Button } from "semantic-ui-react";
+import React, { useState } from "react";
+import { Divider, Header, Table, Button, Confirm } from "semantic-ui-react";
 
 export const Detail = (props) => {
+  const [deleteConfirm, setdeleteConfirm] = useState(false);
   const { onDeleteSubscription, onBackHome, arrayDetail } = props;
 
-  // const onDeleteSubscription = (arrayDetail) => {
+  const onOpenDeleteConfirm = () => {
+    setdeleteConfirm(true)
+  }
 
-  //   console.log(arrayDetail[1]);
-  // };
+  const onCloseDeleteConfirm = () => {
+    setdeleteConfirm(false)
+  }
 
   return (
     <>
       <Divider horizontal>
-        <Header as="h4">
-          {/* <Icon name="bar chart" /> */}
-          詳細画面
-        </Header>
+        <Header as="h4">詳細画面</Header>
       </Divider>
 
       <Table definition className="detail">
@@ -26,7 +27,7 @@ export const Detail = (props) => {
           </Table.Row>
           <Table.Row>
             <Table.Cell>金額</Table.Cell>
-            <Table.Cell>{arrayDetail[3]}</Table.Cell>
+            <Table.Cell>{arrayDetail[3]}円</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.Cell>周期</Table.Cell>
@@ -40,42 +41,35 @@ export const Detail = (props) => {
             <Table.Cell>メモ</Table.Cell>
             <Table.Cell>{arrayDetail[6]}</Table.Cell>
           </Table.Row>
-
-          {/* <Table.Row className="del-form-button-wrapper">
-
-          <Table.Cell> */}
-
-          {/* <Table.Footer className="del-form-button-wrapper"> */}
-          {/* <Table.Row className="del-form-button-wrapper"> */}
-          {/* <Table.HeaderCell className="del-form-button-wrapper"> */}
-
-          {/* <div className="del-form-button-wrapper"> */}
-          </Table.Body>
-          <Table.Footer className="del-form-button-wrapper">
+        </Table.Body>
+        <Table.Footer className="del-form-button-wrapper">
           <Table.Row className="del-form-button-wrapper">
-          <Table.HeaderCell className="table-pointer">
-            <Button
-            floated='right'
-              onClick={() => onDeleteSubscription(arrayDetail[1])}
-              className="add-form-button"
+            <Table.HeaderCell className="table-pointer">
+              <Button
+                floated="right"
+                onClick={onOpenDeleteConfirm}
+                // onClick={() => onDeleteSubscription(arrayDetail[1])}
+                className="add-form-button"
               >
-              削除
-            </Button>
-            {/* <Button onClick={onTestConsole} className="del-form-button"> */}
-            <Button floated='right' onClick={onBackHome} className="del-form-button">
+                削除
+              </Button>
+              <Button
+                floated="right"
+                onClick={onBackHome}
+                className="del-form-button"
+              >
                 戻る
               </Button>
-
-                </Table.HeaderCell>
-              </Table.Row>
-                </Table.Footer>
-          {/* </div> */}
-              {/* </Table.HeaderCell> */}
-                {/* </Table.Row> */}
-                {/* </Table.Cell>
-                </Table.Row> */}
-              {/* </Table.Footer> */}
+            </Table.HeaderCell>
+          </Table.Row>
+        </Table.Footer>
       </Table>
+      <Confirm
+          open={deleteConfirm}
+          content='本当に削除しますよ'
+          onCancel={onCloseDeleteConfirm}
+          onConfirm={() => onDeleteSubscription(arrayDetail[1])}
+        />
     </>
   );
 };
