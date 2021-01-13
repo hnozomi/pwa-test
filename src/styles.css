@@ -93,7 +93,7 @@
 }
 
 .subscription-title, .subscription-remark {
-  max-width: 290px;
+  max-width: 350px;
   overflow-wrap: break-word;
 }
 
