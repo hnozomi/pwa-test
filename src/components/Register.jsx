@@ -52,32 +52,32 @@ export const Register = (props) => {
               <Radio
                 label="1週間  "
                 name="radioGroup"
-                value="7"
-                checked={inputCycle === "7"}
+                value="1週間"
+                checked={inputCycle === "1週間"}
                 className="add-form-input add-form-radio"
                 onChange={onChangeCycle}
               />
               <Radio
                 label="2週間"
                 name="radioGroup"
-                value="14"
-                checked={inputCycle === "14"}
+                value="2週間"
+                checked={inputCycle === "2週間"}
                 className="add-form-input add-form-radio"
                 onChange={onChangeCycle}
               />
               <Radio
-                label="1カ月"
+                label="1ヶ月"
                 name="radioGroup"
-                value="31"
-                checked={inputCycle === "31"}
+                value="1ヶ月"
+                checked={inputCycle === "1ヶ月"}
                 className="add-form-input add-form-radio"
                 onClick={onChangeCycle}
               />
               <Radio
                 label="1年"
                 name="radioGroup"
-                value="365"
-                checked={inputCycle === "365"}
+                value="1年"
+                checked={inputCycle === "1年"}
                 className="add-form-input add-form-radio"
                 onClick={onChangeCycle}
               />

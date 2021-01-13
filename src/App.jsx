@@ -70,6 +70,7 @@ export const App = () => {
     inputCycle,
     inputRemark
   ) => {
+    setloading(true);
     const URL =
       "https://f1j83dq2c6.execute-api.ap-northeast-1.amazonaws.com/default/Subscription";
 
@@ -83,8 +84,10 @@ export const App = () => {
     };
 
     axios.get(URL, { params: param }).then((response) => {
+      console.log(response)
       setArraySubscription(response.data[0]);
       setTotalCost(response.data[1]);
+      setloading(false);
     });
 
     onBackHome();
@@ -93,6 +96,7 @@ export const App = () => {
 // サブスクの削除
 
   const onDeleteSubscription = (subscriptionID) => {
+    setloading(true);
     const URL =
       "https://f1j83dq2c6.execute-api.ap-northeast-1.amazonaws.com/default/Subscription";
 
@@ -104,6 +108,7 @@ export const App = () => {
     axios.get(URL, { params: param }).then((response) => {
       setArraySubscription(response.data[0]);
       setTotalCost(response.data[1]);
+      setloading(false);
     });
 
     onBackHome();

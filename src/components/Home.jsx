@@ -21,7 +21,7 @@ export const Home = (props) => {
               key={index}
             >
               <Icon name="angle right" />
-              <div className="sucscription-wrapper">
+              <div className="subscription-button-wrapper">
                 <p className="sucscription-title" key={index}>
                   {subscription[2]}
                 </p>

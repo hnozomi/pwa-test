@@ -23,7 +23,7 @@ export const Detail = (props) => {
         <Table.Body className="subscription-detail">
           <Table.Row>
             <Table.Cell width={2}>サブスク名</Table.Cell>
-            <Table.Cell>{arrayDetail[2]}</Table.Cell>
+            <Table.Cell className="subscription-title">{arrayDetail[2]}</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.Cell>金額</Table.Cell>
@@ -31,15 +31,19 @@ export const Detail = (props) => {
           </Table.Row>
           <Table.Row>
             <Table.Cell>周期</Table.Cell>
-            <Table.Cell>{arrayDetail[4]}日</Table.Cell>
+            <Table.Cell>{arrayDetail[4]}</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.Cell>登録日</Table.Cell>
             <Table.Cell>{arrayDetail[5]}</Table.Cell>
           </Table.Row>
           <Table.Row>
-            <Table.Cell>メモ</Table.Cell>
+            <Table.Cell>次回更新日</Table.Cell>
             <Table.Cell>{arrayDetail[6]}</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>メモ</Table.Cell>
+            <Table.Cell className="subscription-remark">{arrayDetail[7]}</Table.Cell>
           </Table.Row>
         </Table.Body>
         <Table.Footer className="del-form-button-wrapper">
